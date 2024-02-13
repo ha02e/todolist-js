@@ -17,8 +17,8 @@
     <div class="container">
       <h1>TO-DO LIST</h1>
       <section class="input-area">
-        <input type="text" />
-        <button>+</button>
+        <input type="text" id="task-input" />
+        <button id="add-button">+</button>
       </section>
       <section class="task-area">
         <div class="task-tabs">
@@ -27,15 +27,7 @@
           <div>진행중</div>
           <div>완료</div>
         </div>
-        <div>
-          <div class="task">
-            <div>과제하기</div>
-            <div>
-              <button>Check</button>
-              <button>Delete</button>
-            </div>
-          </div>
-        </div>
+        <div id="task-board"></div>
       </section>
     </div>
     <script
