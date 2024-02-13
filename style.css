@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  background-image: url(images/graph-paper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  background-color: #ffffff;
+  min-height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.task-area {
+  border: 1px solid #cccccc;
+}
+
+.task-tabs {
+  display: flex;
+  border-bottom: 1px solid #cccccc;
+  position: relative;
+}
+
+.task-tabs div {
+  padding: 1em;
+}
+
+#under-line {
+  height: 4px;
+  background-color: coral;
+  position: absolute;
+  width: 100px;
+  left: 0px;
+  top: 52px;
+  padding: 0px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
