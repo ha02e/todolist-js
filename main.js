@@ -1,10 +1,3 @@
-//유저가 값을 입력한다
-//+ 버튼을 클릭하면 할일이 추가됨
-//Delete 버튼을 누르면 할일이 삭제 됨
-//Check 버튼을 누르면 할일이 완료됨, 밑줄 생김
-//진행중/끝남 탭을 누르면 언더바가 이동
-//진행중/끝남 필터링
-
 let taskInput = document.getElementById("task-input");
 let addButton = document.getElementById("add-button");
 let taskList = [];
@@ -35,7 +28,7 @@ function render() {
       resultHTML += `<li class="task">
       <div class="task-text task-done" onclick="toggleComplete('${taskList[i].id}')">${taskList[i].taskContent}</div>
       <div>
-        <button onclick="deleteTask('${taskList[i].id}')">Delete</button>
+        <button class="delete-btn" onclick="deleteTask('${taskList[i].id}')"></button>
       </div>
     </li>`;
     } else {
