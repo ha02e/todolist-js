@@ -12,8 +12,12 @@ let taskList = [];
 addButton.addEventListener("click", addTask);
 
 function addTask() {
-  let taskContent = taskInput.value;
-  taskList.push(taskContent);
+  let task = {
+    id: randomIDGenerate(),
+    taskContent: taskInput.value,
+    isComplete: false,
+  };
+  taskList.push(task);
   console.log(taskList);
   render();
 }
@@ -21,14 +25,39 @@ function addTask() {
 function render() {
   let resultHTML = "";
   for (let i = 0; i < taskList.length; i++) {
-    resultHTML += `<div class="task">
-    <div>${taskList[i]}</div>
-    <div>
-      <button>Check</button>
-      <button>Delete</button>
-    </div>
-  </div>`;
+    if (taskList[i].isComplete == true) {
+      resultHTML += `<li class="task task-done" onclick="toggleComplete('${taskList[i].id}')">
+      <div class="task-text">${taskList[i].taskContent}</div>
+      <div>
+        <button>Delete</button>
+      </div>
+    </li>`;
+    } else {
+      resultHTML += `<li class="task" onclick="toggleComplete('${taskList[i].id}')">
+      <div class="task-text">${taskList[i].taskContent}</div>
+      <div>
+        <button>Delete</button>
+      </div>
+    </li>`;
+    }
   }
 
   document.getElementById("task-board").innerHTML = resultHTML;
+}
+
+function toggleComplete(id) {
+  // console.log("check됐음!!");
+  console.log(id);
+  for (let i = 0; i < taskList.length; i++) {
+    if (taskList[i].id == id) {
+      taskList[i].isComplete = !taskList[i].isComplete;
+      break;
+    }
+  }
+  render();
+  console.log(taskList);
+}
+
+function randomIDGenerate() {
+  return Math.random().toString(36).substr(2, 16);
 }

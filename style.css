@@ -6,15 +6,63 @@ body {
 }
 
 .container {
-  background-color: #ffffff;
+  width: 100%;
   min-height: 100vh;
+}
+
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  background-color: #ffffff;
+  margin: 100px auto 20px auto;
+  padding: 20px 30px 70px;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-.task-area {
-  border: 1px solid #cccccc;
+.todo-app h1 {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 50px;
+  font-weight: 400;
+  font-style: normal;
+  margin: 30px;
 }
+
+.input-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e7e8f0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.input-area input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 16px;
+  font-size: 16px;
+}
+
+.input-area button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 10px 50px;
+  background-color: #ed5556;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 100px;
+}
+
+/* .task-area {
+  border: 1px solid #cccccc;
+} */
 
 .task-tabs {
   display: flex;
@@ -36,8 +84,55 @@ body {
   padding: 0px;
 }
 
+#task-board {
+  padding: 0 10px;
+}
+
 .task {
+  list-style: none;
+  font-size: 16px;
+  padding: 1em 1em 1em 2.5em;
   display: flex;
   justify-content: space-between;
-  padding: 1em;
+  line-height: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.task::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-image: url(images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.task-text {
+  width: 100%;
+  cursor: pointer;
+}
+
+.task-done {
+  text-decoration: line-through;
+  color: #d3d6e1;
+  cursor: pointer;
+}
+
+.task-done::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-image: url(images/checked.png);
+  background-size: cover;
+  background-position: center;
 }
