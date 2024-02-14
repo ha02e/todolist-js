@@ -14,8 +14,9 @@ body {
 .todo-app {
   width: 100%;
   max-width: 540px;
+  height: 560px;
   background-color: #ffffff;
-  margin: 120px auto 20px auto;
+  margin: 4em auto 20px auto;
   padding: 20px 30px 60px 30px;
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -88,6 +89,8 @@ body {
 
 #task-board {
   padding: 0 10px;
+  overflow: overlay;
+  height: 300px;
 }
 
 .task {
