@@ -100,7 +100,7 @@ body {
   position: relative;
 }
 
-.task::before {
+.task-text::before {
   content: "";
   position: absolute;
   left: 0px;
