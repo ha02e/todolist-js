@@ -59,6 +59,9 @@ function toggleComplete(id) {
 }
 
 function deleteTask(id) {
+  if (!confirm("삭제하시면 복구할 수 없습니다.\n정말 삭제하시겠습니까?")) {
+    return false;
+  }
   for (let i = 0; i < taskList.length; i++) {
     if (taskList[i].id == id) {
       taskList.splice(i, 1);
