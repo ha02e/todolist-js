@@ -20,6 +20,7 @@ function addTask() {
   taskList.push(task);
   console.log(taskList);
   render();
+  taskInput.value = "";
 }
 
 function render() {
@@ -36,7 +37,7 @@ function render() {
       resultHTML += `<li class="task">
       <div class="task-text" onclick="toggleComplete('${taskList[i].id}')">${taskList[i].taskContent}</div>
       <div>
-        <button onclick="deleteTask('${taskList[i].id}')">Delete</button>
+        <button class="delete-btn" onclick="deleteTask('${taskList[i].id}')"></button>
       </div>
     </li>`;
     }

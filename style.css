@@ -143,3 +143,19 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+.delete-btn {
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  background-image: url(images/delete.png);
+  background-size: 76%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+}
+.delete-btn:hover {
+  background-color: #e7e8f0;
+}
