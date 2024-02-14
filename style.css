@@ -14,9 +14,8 @@ body {
 .todo-app {
   width: 100%;
   max-width: 540px;
-  min-height: 80vh;
   background-color: #ffffff;
-  margin: 100px auto 20px auto;
+  margin: 120px auto 20px auto;
   padding: 20px 30px 60px 30px;
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
