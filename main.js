@@ -12,15 +12,20 @@ let taskList = [];
 addButton.addEventListener("click", addTask);
 
 function addTask() {
-  let task = {
-    id: randomIDGenerate(),
-    taskContent: taskInput.value,
-    isComplete: false,
-  };
-  taskList.push(task);
-  console.log(taskList);
-  render();
-  taskInput.value = "";
+  if (taskInput.value == "") {
+    alert("할일을 입력해주세요.");
+    taskInput.focus();
+  } else {
+    let task = {
+      id: randomIDGenerate(),
+      taskContent: taskInput.value,
+      isComplete: false,
+    };
+    taskList.push(task);
+    console.log(taskList);
+    render();
+    taskInput.value = "";
+  }
 }
 
 function render() {
