@@ -17,7 +17,12 @@
       <div class="todo-app">
         <h1>TO-DO LIST</h1>
         <section class="input-area">
-          <input type="text" id="task-input" placeholder="할일 입력" />
+          <input
+            type="text"
+            id="task-input"
+            placeholder="할일 입력"
+            onkeyup="enterKey()"
+          />
           <button id="add-button">+</button>
         </section>
         <section class="task-area">

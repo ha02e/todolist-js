@@ -74,3 +74,9 @@ function deleteTask(id) {
 function randomIDGenerate() {
   return Math.random().toString(36).substr(2, 16);
 }
+
+function enterKey() {
+  if (window.event.keyCode == 13) {
+    addTask();
+  }
+}
