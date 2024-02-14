@@ -29,14 +29,14 @@ function render() {
       resultHTML += `<li class="task">
       <div class="task-text task-done" onclick="toggleComplete('${taskList[i].id}')">${taskList[i].taskContent}</div>
       <div>
-        <button onclick="deleteTask()">Delete</button>
+        <button onclick="deleteTask('${taskList[i].id}')">Delete</button>
       </div>
     </li>`;
     } else {
       resultHTML += `<li class="task">
       <div class="task-text" onclick="toggleComplete('${taskList[i].id}')">${taskList[i].taskContent}</div>
       <div>
-        <button onclick="deleteTask()">Delete</button>
+        <button onclick="deleteTask('${taskList[i].id}')">Delete</button>
       </div>
     </li>`;
     }
@@ -46,7 +46,6 @@ function render() {
 }
 
 function toggleComplete(id) {
-  // console.log("check됐음!!");
   console.log(id);
   for (let i = 0; i < taskList.length; i++) {
     if (taskList[i].id == id) {
@@ -58,8 +57,14 @@ function toggleComplete(id) {
   console.log(taskList);
 }
 
-function deleteTask() {
-  console.log("삭제!!");
+function deleteTask(id) {
+  for (let i = 0; i < taskList.length; i++) {
+    if (taskList[i].id == id) {
+      taskList.splice(i, 1);
+      break;
+    }
+  }
+  render();
 }
 
 function randomIDGenerate() {
