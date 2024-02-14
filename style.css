@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  background-image: url(images/graph-paper.jpg);
+  background-image: url(images/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 
 .container {
@@ -13,12 +14,14 @@ body {
 .todo-app {
   width: 100%;
   max-width: 540px;
+  min-height: 80vh;
   background-color: #ffffff;
   margin: 100px auto 20px auto;
-  padding: 20px 30px 70px;
+  padding: 20px 30px 60px 30px;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .todo-app h1 {
@@ -26,7 +29,7 @@ body {
   font-size: 50px;
   font-weight: 400;
   font-style: normal;
-  margin: 30px;
+  margin: 30px 10px;
 }
 
 .input-area {
@@ -53,7 +56,7 @@ body {
   border: none;
   outline: none;
   padding: 10px 50px;
-  background-color: #ed5556;
+  background-color: #4c6ef5;
   color: #ffffff;
   font-size: 30px;
   font-weight: bold;
@@ -76,7 +79,7 @@ body {
 
 #under-line {
   height: 4px;
-  background-color: coral;
+  background-color: #4c6ef5;
   position: absolute;
   width: 100px;
   left: 0px;
@@ -96,11 +99,11 @@ body {
   justify-content: space-between;
   line-height: 30px;
   height: 30px;
-  cursor: pointer;
   position: relative;
 }
 
 .task-text::before {
+  cursor: pointer;
   content: "";
   position: absolute;
   left: 0px;
@@ -114,17 +117,19 @@ body {
 }
 
 .task-text {
-  width: 100%;
   cursor: pointer;
+  pointer-events: auto;
+  width: 100%;
 }
 
 .task-done {
+  cursor: pointer;
   text-decoration: line-through;
   color: #d3d6e1;
-  cursor: pointer;
 }
 
 .task-done::before {
+  cursor: pointer;
   content: "";
   position: absolute;
   left: 0px;
