@@ -1,11 +1,23 @@
 let taskInput = document.getElementById("task-input");
 let addButton = document.getElementById("add-button");
 let tabs = document.querySelectorAll(".task-tabs div");
+let tabsUnderLine = document.getElementById("under-line");
 
 let taskList = [];
 let filterList = [];
 let mode = "all";
 
+// 탭 슬라이딩
+tabs.forEach((menu) => menu.addEventListener("click", (e) => tabIndicator(e)));
+
+function tabIndicator(e) {
+  tabsUnderLine.style.left = e.currentTarget.offsetLeft + "px";
+  tabsUnderLine.style.width = e.currentTarget.offsetWidth + "px";
+  tabsUnderLine.style.top =
+    e.currentTarget.offsetTop + e.currentTarget.offsetHeight + "px";
+}
+
+// 할일 추가
 addButton.addEventListener("click", addTask);
 
 for (let i = 1; i < tabs.length; i++) {
@@ -62,6 +74,7 @@ function render() {
   document.getElementById("task-board").innerHTML = resultHTML;
 }
 
+//할일 완료
 function toggleComplete(id) {
   //console.log(id);
   for (let i = 0; i < taskList.length; i++) {
@@ -74,6 +87,7 @@ function toggleComplete(id) {
   //console.log(taskList);
 }
 
+//할일 삭제
 function deleteTask(id) {
   if (!confirm("삭제하시면 복구할 수 없습니다.\n정말 삭제하시겠습니까?")) {
     return false;
