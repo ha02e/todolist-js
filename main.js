@@ -70,7 +70,7 @@ function toggleComplete(id) {
       break;
     }
   }
-  render();
+  filter();
   //console.log(taskList);
 }
 
@@ -84,11 +84,14 @@ function deleteTask(id) {
       break;
     }
   }
-  render();
+  filter();
 }
 
 function filter(event) {
-  mode = event.target.id;
+  if (event) {
+    mode = event.target.id;
+  }
+
   filterList = [];
 
   if (mode === "all") {
