@@ -1,18 +1,17 @@
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(images/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .container {
-  width: 550px;
-  height: 600px;
+  width: 600px;
+  min-height: 60vh;
   background-color: #ffffff;
   padding: 20px 30px 60px 30px;
   border-radius: 10px;
@@ -188,10 +187,11 @@ body {
   background-color: #e7e8f0;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 600px) {
   .container {
-    width: 80%;
-    height: 80%;
+    width: 80vw;
+    height: 86vh;
+    border-radius: 0px;
   }
 
   #task-board {
